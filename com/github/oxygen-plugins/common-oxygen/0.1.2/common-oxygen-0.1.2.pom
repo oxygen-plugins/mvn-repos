@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.github.oxygen-plugins</groupId>
+	<artifactId>common-oxygen</artifactId>
+	<version>0.1.2</version>
+	<url>https://github.com/oxygen-plugins/common-oxygen</url>
+	
+	<licenses>
+		<license>
+			<name>GNU General Public License (GPL)</name>
+			<url>http://www.gnu.org/licenses/gpl.txt</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>Nico Kutscherauer</name>
+			<email>nico@nkutsche.com</email>
+			<url>https://www.github.com/nkutsche</url>
+		</developer>
+	</developers>
+    
+    <properties>
+        <distribution.project>${project.basedir}/../com.github.oxygen-plugins.mvn-repos</distribution.project>
+    </properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>com.github.oxygen-plugins</groupId>
+			<artifactId>common-gui</artifactId>
+			<version>0.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.oxygenxml</groupId>
+			<artifactId>oxygen-sdk</artifactId>
+			<version>18.1.0.3</version>
+		</dependency>
+	</dependencies>
+
+
+	<repositories>
+		<repository>
+			<id>oxygen-plugins-mvn-repo</id>
+			<url>https://raw.github.com/oxygen-plugins/mvn-repos/master/</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>oxygen</id>
+			<url>http://oxygenxml.com/maven/</url>
+		</repository>
+	</repositories>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<distributionManagement>
+		<repository>
+			<id>remote.repo</id>
+			<name>Remote to GitHub project</name>
+			<url>file://${distribution.project}</url>
+		</repository>
+	</distributionManagement>
+	
+</project>
